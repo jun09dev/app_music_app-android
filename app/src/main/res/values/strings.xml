@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App -->
+    <string name="app_name">MyApp</string>
+
+    <!-- Login -->
+    <string name="login_title">Đăng nhập</string>
+    <string name="hint_username">Email hoặc tên đăng nhập</string>
+    <string name="hint_password">Mật khẩu</string>
+    <string name="btn_login">Đăng nhập</string>
+    <string name="forgot_password">Quên mật khẩu?</string>
+    <string name="signup">Đăng ký</string>
+    <string name="login_error_invalid">Tên đăng nhập hoặc mật khẩu không đúng</string>
+    <string name="login_success">Đăng nhập thành công</string>
+
+    <!-- Register -->
+    <string name="register_title">Đăng ký tài khoản</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_confirm_password">Nhập lại mật khẩu</string>
+    <string name="btn_register">Đăng ký</string>
+    <string name="register_success">Đăng ký thành công</string>
+    <string name="register_error">Đăng ký thất bại. Vui lòng thử lại.</string>
+    <string name="already_have_account">Đã có tài khoản? Đăng nhập</string>
+    <!-- chuỗi bị thiếu -->
+    <string name="link_forgot_password">Bạn đã có tài khoản? Quên mật khẩu?</string>
+
+    <!-- Forgot Password -->
+    <string name="forgot_title">Quên mật khẩu</string>
+    <string name="forgot_info">Nhập email bạn dùng để đăng ký. Chúng tôi sẽ gửi hướng dẫn đặt lại mật khẩu.</string>
+    <string name="btn_send_reset">Gửi yêu cầu</string>
+    <string name="back_to_login">Quay lại đăng nhập</string>
+    <string name="reset_success">Yêu cầu đặt lại mật khẩu đã được gửi</string>
+    <string name="reset_error">Không thể gửi yêu cầu. Kiểm tra lại email.</string>
+
+    <!-- Common -->
+    <string name="loading">Đang xử lý...</string>
+    <string name="error_network">Lỗi kết nối. Vui lòng thử lại.</string>
+    <string name="empty_field">Vui lòng nhập đầy đủ thông tin</string>
+</resources>
