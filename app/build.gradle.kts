@@ -49,4 +49,7 @@ dependencies {
     implementation("com.squareup.okhttp3:logging-interceptor:4.10.0")
 // Optional: EncryptedSharedPreferences (nếu muốn lưu token an toàn)
     implementation("androidx.security:security-crypto:1.1.0-alpha03")
+
+    implementation("com.squareup.retrofit2:converter-scalars:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 }
