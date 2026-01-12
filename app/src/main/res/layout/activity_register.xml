@@ -10,11 +10,12 @@
     android:paddingTop="28dp"
     android:background="@android:color/white">
 
+    <!-- Title -->
     <TextView
         android:id="@+id/tvRegisterTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/register_title"
+        android:text="Đăng ký"
         android:textSize="22sp"
         android:textStyle="bold"
         android:gravity="center"
@@ -23,33 +24,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- Email -->
-    <EditText
-        android:id="@+id/etRegEmail"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:hint="@string/hint_email"
-        android:inputType="textEmailAddress"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp"
-        android:background="@drawable/rounded_edittext"
-        app:layout_constraintTop_toBottomOf="@id/tvRegisterTitle"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
     <!-- Username -->
     <EditText
         android:id="@+id/etRegUsername"
         android:layout_width="0dp"
         android:layout_height="48dp"
-        android:hint="@string/hint_username"
+        android:hint="Tên đăng nhập"
         android:inputType="textPersonName"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
         android:background="@drawable/rounded_edittext"
-        app:layout_constraintTop_toBottomOf="@id/etRegEmail"
-        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@id/tvRegisterTitle"
+        android:layout_marginTop="24dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
@@ -58,7 +44,7 @@
         android:id="@+id/etRegPassword"
         android:layout_width="0dp"
         android:layout_height="48dp"
-        android:hint="@string/hint_password"
+        android:hint="Mật khẩu"
         android:inputType="textPassword"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
@@ -73,7 +59,7 @@
         android:id="@+id/etRegPasswordConfirm"
         android:layout_width="0dp"
         android:layout_height="48dp"
-        android:hint="@string/hint_confirm_password"
+        android:hint="Nhập lại mật khẩu"
         android:inputType="textPassword"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
@@ -83,30 +69,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- Error text -->
-    <TextView
-        android:id="@+id/tvRegError"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:textColor="#D32F2F"
-        android:textSize="13sp"
-        android:visibility="gone"
-        app:layout_constraintTop_toBottomOf="@id/etRegPasswordConfirm"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
     <!-- Register button -->
     <Button
         android:id="@+id/btnRegister"
         android:layout_width="0dp"
         android:layout_height="48dp"
-        android:text="@string/btn_register"
+        android:text="Đăng ký"
         android:textAllCaps="false"
         android:backgroundTint="@color/primary"
         android:textColor="@android:color/white"
-        app:layout_constraintTop_toBottomOf="@id/tvRegError"
-        android:layout_marginTop="14dp"
+        app:layout_constraintTop_toBottomOf="@id/etRegPasswordConfirm"
+        android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
@@ -122,12 +95,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- Link to forgot -->
+    <!-- Back to login -->
     <TextView
-        android:id="@+id/tvToForgot"
+        android:id="@+id/tvBackToLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/link_forgot_password"
+        android:text="Quay lại đăng nhập"
         android:textSize="13sp"
         android:paddingTop="18dp"
         app:layout_constraintTop_toBottomOf="@id/progressRegister"

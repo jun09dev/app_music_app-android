@@ -25,7 +25,7 @@ import retrofit2.Retrofit;
 public class RegisterActivity extends AppCompatActivity {
 
     private static final String TAG = "RegisterActivity";
-    private static final String BASE_URL = "http://172.30.1.11:8080/"; // sửa nếu cần
+    private static final String BASE_URL = "http://61.106.148.251:8080/";
 
     private EditText etRegUsername, etRegPassword, etRegPasswordConfirm;
     private Button btnRegister;
@@ -44,19 +44,15 @@ public class RegisterActivity extends AppCompatActivity {
         progress = findViewById(R.id.progressRegister);
         tvBackToLogin = findViewById(R.id.tvBackToLogin);
 
-        // Back to login text
-        if (tvBackToLogin != null) {
-            tvBackToLogin.setOnClickListener(v -> finish());
-        }
+        tvBackToLogin.setOnClickListener(v -> finish());
 
         btnRegister.setOnClickListener(v -> {
-            String username = etRegUsername.getText() != null ? etRegUsername.getText().toString().trim() : "";
-            String password = etRegPassword.getText() != null ? etRegPassword.getText().toString() : "";
-            String confirm = etRegPasswordConfirm.getText() != null ? etRegPasswordConfirm.getText().toString() : "";
+            String username = etRegUsername.getText().toString().trim();
+            String password = etRegPassword.getText().toString();
+            String confirm  = etRegPasswordConfirm.getText().toString();
 
             if (!validateInput(username, password, confirm)) return;
 
-            // Gọi API đăng ký
             performRegister(username, password);
         });
     }
@@ -85,23 +81,23 @@ public class RegisterActivity extends AppCompatActivity {
         AuthService service = retrofit.create(AuthService.class);
 
         RegisterRequest request = new RegisterRequest(username, password);
-        Log.d(TAG, "performRegister: " + username);
 
-        Call<RegisterResponse> call = service.register(request);
-        call.enqueue(new Callback<RegisterResponse>() {
+        service.register(request).enqueue(new Callback<RegisterResponse>() {
             @Override
             public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
                 progress.setVisibility(View.GONE);
                 btnRegister.setEnabled(true);
 
                 if (response.isSuccessful() && response.body() != null) {
-                    RegisterResponse body = response.body();
-                    Toast.makeText(RegisterActivity.this, "Đăng ký thành công: " + body.getUsername(), Toast.LENGTH_LONG).show();
-                    // Trở về màn hình login
+                    Toast.makeText(RegisterActivity.this,
+                            "Đăng ký thành công",
+                            Toast.LENGTH_LONG).show();
                     finish();
                 } else {
-                    Toast.makeText(RegisterActivity.this, "Lỗi đăng ký: " + response.code(), Toast.LENGTH_LONG).show();
-                    Log.w(TAG, "register failed code=" + response.code());
+                    Toast.makeText(RegisterActivity.this,
+                            "Đăng ký thất bại",
+                            Toast.LENGTH_LONG).show();
+                    Log.w(TAG, "register failed: " + response.code());
                 }
             }
 
@@ -109,8 +105,10 @@ public class RegisterActivity extends AppCompatActivity {
             public void onFailure(Call<RegisterResponse> call, Throwable t) {
                 progress.setVisibility(View.GONE);
                 btnRegister.setEnabled(true);
-                Toast.makeText(RegisterActivity.this, "Kết nối thất bại: " + t.getMessage(), Toast.LENGTH_LONG).show();
-                Log.e(TAG, "register onFailure", t);
+                Toast.makeText(RegisterActivity.this,
+                        "Lỗi kết nối: " + t.getMessage(),
+                        Toast.LENGTH_LONG).show();
+                Log.e(TAG, "register error", t);
             }
         });
     }

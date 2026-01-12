@@ -3,33 +3,41 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="24dp"
-    android:background="@android:color/white">
+    android:layout_height="match_parent">
 
+    <!-- Title -->
     <TextView
         android:id="@+id/tvWelcome"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Xin chào"
-        android:textSize="22sp"
+        android:text="Danh sách nhạc"
+        android:textSize="20sp"
         android:textStyle="bold"
+        android:gravity="center"
+        android:padding="16dp"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="64dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:gravity="center"/>
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-    <Button
-        android:id="@+id/btnLogout"
+    <!-- Music list -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMusicList"
         android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:text="Đăng xuất"
-        android:textAllCaps="false"
-        android:backgroundTint="@color/primary"
-        android:textColor="@android:color/white"
+        android:layout_height="0dp"
         app:layout_constraintTop_toBottomOf="@id/tvWelcome"
-        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Bottom navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:menu="@menu/bottom_menu"
+        app:itemIconTint="@color/bottom_nav_selector"
+        app:itemTextColor="@color/bottom_nav_selector"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 

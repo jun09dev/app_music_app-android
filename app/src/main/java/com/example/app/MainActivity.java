@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     // Chỉnh base URL theo môi trường của bạn:
     // - Emulator (host localhost): "http://10.0.2.2:8080/"
     // - Device thật: "http://<HOST_IP>:8080/"
-    private static final String BASE_URL = "http://172.30.1.11:8080/";
+    private static final String BASE_URL = "http://61.106.148.251:8080/";
 
     private AuthService api;
     private PrefManager pref;

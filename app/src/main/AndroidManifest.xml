@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.app">
 
-    <!-- Quyền mạng -->
+    <!-- Quyền truy cập Internet để gọi API -->
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -26,21 +27,37 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HomeActivity" />
 
+        <!-- Màn hình Home -->
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false" />
 
-        <!-- Activity màn hình quên mật khẩu -->
+        <!-- Màn hình quên mật khẩu -->
         <activity
             android:name=".ForgotPasswordActivity"
             android:exported="false"
             android:label="@string/forgot_title" />
 
-        <!-- Activity màn hình đăng ký -->
+        <!-- Màn hình đăng ký -->
         <activity
             android:name=".RegisterActivity"
             android:exported="false"
             android:label="@string/register_title" />
 
+        <!-- Màn hình danh sách nhạc -->
+        <activity
+            android:name=".MusicListActivity"
+            android:exported="false" />
+
+        <!-- Màn hình phát nhạc -->
+        <activity
+            android:name=".MusicPlayerActivity"
+            android:exported="false" />
+
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".CreateMusicActivity" />
+        <activity android:name=".SearchActivity" />
     </application>
 
 </manifest>
